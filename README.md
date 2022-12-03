@@ -11,3 +11,10 @@ Sensors:
   - Car ODB port
 
 TODO rest
+
+
+make non poetry requirements file:
+
+  poetry export --without-hashes > requirements.txt
+  
+  pip install --requirement requirements.txt
