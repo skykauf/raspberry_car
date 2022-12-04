@@ -1,17 +1,13 @@
 # import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
 from datetime import datetime
 import os
-from io import BytesIO
-
 import gps
-import requests
-from PIL import Image
-from io import BytesIO
 import cv2
 
 import threading
 
-from config import datadir, openstreetmap_apikey
+
+datadir = 'data/'
 
 
 class DataRecorder:
@@ -117,20 +113,7 @@ class DataRecorder:
         cv2.destroyAllWindows() # remove later
         print("Camera has terminated")
                     
-    def write_gps_route_to_image(self): # TODO move to different class, call upon gps shutdown?
-        # may want to reduce number of coordinates sent in map-query
-        map_params = {"key": openstreetmap_apikey, "bestfit": ",".join([str(min(self.lats)-.01), str(min(self.longs)-.01), str(max(self.lats)+.01), str(max(self.longs)+.01)]), "size": ", ".join(self.camera_resolution), "shape": ",".join([f'{self.lats[i]},{self.longs[i]}' for i in range(len(self.lats))])}
 
-        mapimage = requests.get("http://www.mapquestapi.com/staticmap/v4/getmap", params=map_params)
-        if mapimage.status_code == 200:
-            print("Successfully retrieved image")
-        else:
-            print("Couldn't retrieve image")
-            print(mapimage.text)
-        i = Image.open(BytesIO(mapimage.content))
-        i.save(os.path.join(self.script_start_datedir, f"ROUTEMAP_{self.script_start_datetime}.jpg"))
-        print("saved image to", self.script_start_datedir)
-        print("SHOWN")
 
 
 
