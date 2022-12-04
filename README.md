@@ -11,16 +11,15 @@ Sensors:
   - Car ODB port
 
 
-
 Raspberry pi installation:
 
-sudo apt-get install libatlas-base-dev
+  - sudo apt-get install libatlas-base-dev
 
-sudo apt install gpsd
+  - sudo apt install gpsd
 
-sudo service gpsd start
+  - sudo service gpsd start
 
-pip install --requirement requirements.txt
+  - pip install --requirement requirements.txt
 
 
 
