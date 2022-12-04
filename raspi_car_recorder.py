@@ -48,7 +48,7 @@ class DataRecorder:
         self.longs = []
         print("Started GPS")
         while True:
-            record_gps()
+            self.record_gps()
 
 
     def initialize_camera(self, fps=20, resolution=(1920, 1080)):

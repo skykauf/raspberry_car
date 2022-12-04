@@ -12,12 +12,20 @@ Sensors:
 
 TODO rest
 
+Raspberry pi installation:
+
+  - sudo apt-get install libatlas-base-dev
+
+  - sudo apt install gpsd
+
+  - sudo service gpsd start
+
+  - pip install --requirement requirements.txt
+
+
 
 make non poetry requirements file for raspberry pi
 
-  pi needs this install for opencv to work:
-
-    sudo apt-get install libatlas-base-dev
 
 
   poetry export --without-hashes > requirements.txt
