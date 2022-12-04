@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 data/
-secrets.py
+credentials.py

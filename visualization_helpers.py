@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from io import BytesIO
 
-from secrets import openstreetmap_apikey
+from credentials import openstreetmap_apikey
 
 
 datadir = 'data/'
