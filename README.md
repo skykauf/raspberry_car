@@ -13,9 +13,7 @@ Sensors:
 
 Raspberry pi installation:
 
-  - sudo apt-get install libatlas-base-dev
-
-  - sudo apt install gpsd
+  - sudo apt-get install libatlas-base-dev gpsd gpsd-clients  
 
   - sudo service gpsd start
 
